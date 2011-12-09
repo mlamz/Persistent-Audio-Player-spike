@@ -1,0 +1,13 @@
+*.swp
+*.resharper.user
+_ReSharper*
+*.user
+*.suo
+*.pidb
+*.userprefs
+obj
+bin
+Bin
+logs
+*.cache
+*.dotCover
