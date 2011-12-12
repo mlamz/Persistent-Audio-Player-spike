@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace PersistentAudioPlayerSpike
 {
-	// Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-	// visit http://go.microsoft.com/?LinkId=9394801
-
 	public class MvcApplication : System.Web.HttpApplication
 	{
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
@@ -22,9 +15,9 @@ namespace PersistentAudioPlayerSpike
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(
-				"SomeContent", // Route name
-				"SomeContent/{artist}", // URL with parameters
-				new { controller = "Home", action = "SomeContent", artist = UrlParameter.Optional } // Parameter defaults
+				"Artist", // Route name
+				"artist/{artist}", // URL with parameters
+				new { controller = "Artist", action = "Index", artist = UrlParameter.Optional } // Parameter defaults
 			);
 
 			routes.MapRoute(

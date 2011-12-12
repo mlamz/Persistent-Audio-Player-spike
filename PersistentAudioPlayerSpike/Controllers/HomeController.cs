@@ -13,25 +13,7 @@ namespace PersistentAudioPlayerSpike.Controllers
 		{
 			return View();
 		}
-
-		public ActionResult SomeContent(string artist)
-		{
-			var viewModel = new SomeContentViewModel
-			                	{
-			                		ArtistName = artist
-			                	};
-			if (Request.IsAjaxRequest())
-			{
-				return PartialView(viewModel);
-			}
-
-			return View(viewModel);
-		}
-
     }
 
-	public class SomeContentViewModel
-	{
-		public string ArtistName { get; set; }
-	}
+	
 }

@@ -59,6 +59,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="ViewModels\ArtistViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -96,7 +98,7 @@
     <Content Include="Views\Home\AnotherPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\SomeContent.cshtml" />
+    <Content Include="Views\Artist\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
