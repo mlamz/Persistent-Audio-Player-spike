@@ -67,25 +67,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Static\css\baseline\baseline.base.css" />
-    <Content Include="Static\css\baseline\baseline.form.css" />
-    <Content Include="Static\css\baseline\baseline.grid.css" />
-    <Content Include="Static\css\baseline\baseline.reset.css" />
-    <Content Include="Static\css\baseline\baseline.type.css" />
-    <Content Include="Static\css\base\site.css" />
-    <Content Include="Static\css\browser\ie.6.css" />
-    <Content Include="Static\css\browser\ie.7.css" />
-    <Content Include="Static\css\browser\ie.8.css" />
-    <Content Include="Static\css\browser\ie.9.css" />
-    <Content Include="Static\css\browser\mobile.css" />
-    <Content Include="Static\css\browser\webkit.css" />
-    <Content Include="Static\css\shared\branding.css" />
-    <Content Include="Static\css\shared\forms.css" />
-    <Content Include="Static\css\shared\layout.css" />
-    <Content Include="Static\css\shared\noscript.css" />
-    <Content Include="Static\css\shared\print.css" />
-    <Content Include="Static\css\shared\sprites.css" />
-    <Content Include="Static\css\shared\typography.css" />
+    <Content Include="Static\css\playerskin\jplayer.blue.monday.css" />
+    <Content Include="Static\css\playerskin\jplayer.blue.monday.jpg" />
+    <Content Include="Static\css\playerskin\jplayer.blue.monday.seeking.gif" />
+    <Content Include="Static\css\playerskin\jplayer.blue.monday.video.play.png" />
+    <Content Include="Static\css\screen.css" />
+    <Content Include="Static\flash\Jplayer.swf" />
+    <Content Include="Static\javascript\custom.js" />
+    <Content Include="Static\javascript\domReady.js" />
+    <Content Include="Static\javascript\history.adapter.jquery.js" />
+    <Content Include="Static\javascript\jquery.jplayer.min.js" />
+    <Content Include="Static\javascript\jQuery.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -102,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\AnotherPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\SomeContent.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

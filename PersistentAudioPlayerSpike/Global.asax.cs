@@ -22,6 +22,12 @@ namespace PersistentAudioPlayerSpike
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(
+				"SomeContent", // Route name
+				"SomeContent/{artist}", // URL with parameters
+				new { controller = "Home", action = "SomeContent", artist = UrlParameter.Optional } // Parameter defaults
+			);
+
+			routes.MapRoute(
 				"Default", // Route name
 				"{controller}/{action}/{id}", // URL with parameters
 				new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
