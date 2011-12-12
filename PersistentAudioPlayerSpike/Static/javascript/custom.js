@@ -11,7 +11,7 @@
 
 	/* "use strict"; */
 
-	var player, ajaxLoader;
+	var player, ajaxLoader, browserHistory;
 
 	player = {
 
@@ -44,16 +44,27 @@
 
 			$(".artist-link").on("click", function (event) {
 
-				var artistName = $(this).attr("rel");
+				var artistName, url, matchExpression, result;
 
-				console.log(artistName);
+				url = this.href;
+				matchExpression = /\/artist\/(\w+\/?)$/;
+				result = url.match(matchExpression);
+				artistName = result[1];
+				
 				$("#page-content").load(this.href, { artist: artistName });
+				History.pushState({ foo: "bar" }, $(this).attr("title"), this.href);
 				event.preventDefault();
 			});
 			return this;
 		}
 	};
 
+	browserHistory = {
+		setUp: function () {
+
+			return this;
+		}
+	};
 	/**************************************
 
 	Ready event
@@ -68,6 +79,8 @@
 
 		player.setUp();
 		ajaxLoader.setUp();
+		browserHistory.setUp();
+
 		return true;
 
 	});

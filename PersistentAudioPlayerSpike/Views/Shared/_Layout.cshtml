@@ -12,8 +12,9 @@
 	<script src="/Static/javascript/jQuery.js" type="text/javascript"></script>
 	<script src="/Static/javascript/domReady.js" type="text/javascript"></script>
 	
-	<script src="/Static/javascript/history.adapter.jquery.js" type="text/javascript"></script>
 	<script src="/Static/javascript/jquery.jplayer.min.js" type="text/javascript"></script>
+
+	<script src="http://balupton.github.com/history.js/scripts/bundled/html4+html5/jquery.history.js"></script> 
 
 	<script src="/Static/javascript/custom.js" type="text/javascript"></script>
 </head>
@@ -230,10 +231,10 @@
             </h3>
             <ul>
             	<li>
-    				<a id="link1" rel="thedoors" class="artist-link" title="The Doors" href="/artist/thedoors">The Doors</a>
+    				<a id="link1" class="artist-link" title="The Doors" href="/artist/thedoors">The Doors</a>
                 </li>
                 <li>
-    				<a title="decemberists" rel="Decemberists" class="artist-link" href="/artist/decemberists">Decemberists</a>
+    				<a title="decemberists" class="artist-link" href="/artist/decemberists">Decemberists</a>
 				</li>
 			</ul>
         </div>
@@ -298,6 +299,11 @@
   </div>
         
 
-
+		<script>
+			window.onpopstate = function (event) {
+				
+				console.log(window.location.toString());
+			};
+		</script>
 </body>
 </html>
