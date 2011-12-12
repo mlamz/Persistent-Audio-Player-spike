@@ -43,24 +43,49 @@
 		setUp: function () {
 
 			$(".artist-link").on("click", function (event) {
-
-				var artistName, url, matchExpression, result;
-
-				url = this.href;
-				matchExpression = /\/artist\/(\w+\/?)$/;
-				result = url.match(matchExpression);
-				artistName = result[1];
-				
-				$("#page-content").load(this.href, { artist: artistName });
-				History.pushState({ foo: "bar" }, $(this).attr("title"), this.href);
+				console.log("***Link clicked***");
+				console.log("*This href is: " + this.href);
+				ajaxLoader.loadPageContent(this.href);
 				event.preventDefault();
 			});
 			return this;
+		},
+		loadPageContent: function (url) {
+			console.log("***loadPageContent called***");
+			console.log("*This url is: " + url);
+
+			var artistName, matchExpression, result;
+
+			matchExpression = /\/artist\/(\w+\/?)$/;
+			result = url.match(matchExpression);
+			console.log(result);
+
+			if (!result) {
+
+				console.log("no match");
+				$("#page-content").html("");
+
+			} else {
+
+				artistName = result[1];
+
+				$("#page-content").load(url, { artist: artistName });
+
+
+			}
+			History.pushState(null, null, url);
 		}
 	};
 
 	browserHistory = {
 		setUp: function () {
+
+			window.addEventListener("popstate", function (event) {
+				console.log("***Popstate changed***");
+				console.log("callin ajax loader");
+
+				ajaxLoader.loadPageContent(location.pathname);
+			});
 
 			return this;
 		}
@@ -84,8 +109,5 @@
 		return true;
 
 	});
-
-	// close the anonymous function wrapper
-	// and invoke it now
 
 } (jQuery));
