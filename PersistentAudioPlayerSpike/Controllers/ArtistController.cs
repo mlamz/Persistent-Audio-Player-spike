@@ -5,7 +5,7 @@ namespace PersistentAudioPlayerSpike.Controllers
 {
 	public class ArtistController : Controller
 	{
-		public ActionResult Index(string artist)
+		public ActionResult Index(string artist, string artistAAAA)
 		{
 			var viewModel = new ArtistViewModel
 			{
