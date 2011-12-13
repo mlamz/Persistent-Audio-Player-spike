@@ -1,7 +1,22 @@
-﻿body > #c {
+﻿html 
+{
+
+	background-color: #f5f4eb;
+	height: 0;
+	
+}
+
+body > #c {
     min-height: 0;
+	
 }
 
 .sidebar-heading, .left-sidebar-heading {
 	text-shadow: 0 0 0 rgba(20, 20, 20, 0);
+}
+
+#jp_container_1 {
+	position: fixed;
+	bottom: 0;
+    width: 100%;
 }

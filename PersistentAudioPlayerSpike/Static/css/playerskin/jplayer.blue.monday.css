@@ -13,6 +13,7 @@
  * Skin Version: 4.0 (jPlayer 2.1.0)
  * Date: 1st September 2011
  */
+ 
 
 div.jp-audio,
 div.jp-video {
@@ -356,13 +357,13 @@ div.jp-video div.jp-duration {
 
 div.jp-title {
 	font-weight:bold;
+	color: #fefefe;
 	text-align:center;
 }
 
 div.jp-title,
 div.jp-playlist {
 	width:100%;
-	background-color:#ccc;
 	border-top:1px solid #009be3;
 }
 div.jp-type-single div.jp-title,
