@@ -45,35 +45,18 @@
 			$("a.page-content-link").on("click", function (event) {
 				console.log("***Link clicked***");
 				console.log("*This href is: " + this.href);
-				ajaxLoader.loadPageContent(this.href);
+				console.log("data-params is: " + $(this).attr("data-params"));
+				ajaxLoader.loadPageContent(this.href, $(this).attr("data-params"));
 				event.preventDefault();
 			});
 			return this;
 		},
-		loadPageContent: function (url) {
+		loadPageContent: function (url, dataParams) {
 			console.log("***loadPageContent called***");
 			console.log("*This url is: " + url);
 
-			var artistName, matchExpression, result;
-
-			matchExpression = /\/artist\/(\w+\/?)$/;
-			result = url.match(matchExpression);
-			console.log(result);
-
-			if (!result) {
-
-				console.log("no match");
-				$("#page-content").html("");
-
-			} else {
-
-				artistName = result[1];
-
-				$("#page-content").load(url, { artist: artistName });
-
-
-			}
-			History.pushState(null, null, url);
+			$("#page-content").load(url, dataParams);
+			History.pushState(dataParams, null, url);
 		}
 	};
 
@@ -84,7 +67,7 @@
 				console.log("***Popstate changed***");
 				console.log("callin ajax loader");
 
-				ajaxLoader.loadPageContent(location.pathname);
+				ajaxLoader.loadPageContent(location.pathname, event.state);
 			});
 
 			return this;

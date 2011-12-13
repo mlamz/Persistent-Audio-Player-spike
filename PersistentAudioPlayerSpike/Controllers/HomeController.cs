@@ -6,7 +6,12 @@ namespace PersistentAudioPlayerSpike.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+			if (Request.IsAjaxRequest())
+			{
+				return PartialView();
+			}
+
+			return View();
         }
 
 		public ActionResult AnotherPage()
