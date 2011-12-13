@@ -42,7 +42,7 @@
 	ajaxLoader = {
 		setUp: function () {
 
-			$(".artist-link").on("click", function (event) {
+			$("a.page-content-link").on("click", function (event) {
 				console.log("***Link clicked***");
 				console.log("*This href is: " + this.href);
 				ajaxLoader.loadPageContent(this.href);
