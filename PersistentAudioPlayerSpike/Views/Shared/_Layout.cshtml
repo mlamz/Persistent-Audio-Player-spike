@@ -135,20 +135,6 @@
       </div>
     </div>
   </div>
-        
-
-		<script>
-			window.onpopstate = function (event) {
-				if (event.state) {
-					console.log(event.state);
-					console.log("either back or forward browser button pressed on a ajax page so we need to reload content into the page-content-div");
-					console.log("trying to load content from:" + document.location.href);
-
-					$("#page-content").load(document.location.href, { artist: "fooo bar" });
-
-				}
-				//History.pushState({ foo: "bar" }, "some title", document.location.href);
-			};
-		</script>
+	
 </body>
 </html>
